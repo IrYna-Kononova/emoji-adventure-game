@@ -36,7 +36,7 @@ const character = {
 
 // simulate weather conditions
 function simulateWeather() {
-  const conditions = ['☀️', '🌧️', '⛈️', '❄️', '🌪️']; // Emojis representing weather conditions
+  const conditions = ['☀️', '🌧️', '⛈️', '❄️', '🌪️']; 
   const randomIndex = Math.floor(Math.random() * conditions.length);
   return conditions[randomIndex];
 }
