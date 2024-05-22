@@ -10,7 +10,6 @@ class Character {
         this.health = 100;
     }
   
-
     //update character's mood based on weather
     updateMood(weatherCondition) {
         const reactions = {
