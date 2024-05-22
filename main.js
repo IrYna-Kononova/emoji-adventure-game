@@ -3,10 +3,13 @@ import chalk from 'chalk';
 import readlineSync from 'readline-sync';
 
 
-const character = {
-    name: chalk.bold('Adventurer'),
-    mood: '😊',
-    health: 100,
+class Character {
+    constructor(name) {
+        this.name = chalk.bold(name);
+        this.mood = '😊';
+        this.health = 100;
+    }
+  
 
     //update character's mood based on weather
     updateMood(weatherCondition) {
@@ -20,19 +23,25 @@ const character = {
 
         this.mood = reactions[weatherCondition] || 'Neutral';
     
-    },
+    }
 
     //display character's mood
     displayMood() {
         console.log(`${this.name} is feeling ${this.mood}`);
-    },
+    }
 
     //reduce character's health
     reduceHealth(amount) {
         this.health -= amount;
         console.log(chalk.red (`${this.name} took ${amount} damage! Health: ${this.health}`));
     }
-};
+
+    //recover character's health
+    recoverHealth(amount) {
+        this.health += amount;
+        console.log(chalk.green(`${this.name} recovered ${amount} health! Health: ${this.health}`));
+    }
+}
 
 // simulate weather conditions
 function simulateWeather() {
@@ -42,7 +51,7 @@ function simulateWeather() {
 }
 
 // simulate an encounter based on weather
-function simulateEncounter(weatherCondition) {
+function simulateEncounter(character, weatherCondition) {
   console.log('You encountered a weather condition:', weatherCondition);
   
     
@@ -68,6 +77,8 @@ function simulateEncounter(weatherCondition) {
             console.log(chalk.red ('A tornado is coming your way! Run!'));
             character.reduceHealth(30);
             break;
+        default:
+            console.log(chalk.grey('The weather is calm, nothing happens'));
     }
 
     character.updateMood(weatherCondition);
@@ -76,14 +87,22 @@ function simulateEncounter(weatherCondition) {
 
 // game loop
 function main() {
+    const character = new Character ('Adventurer');
     console.log(chalk.bold ('Your journey begins!'));
-   if (character.health > 0){
+   while (character.health > 0){
         const weatherCondition = simulateWeather();
         readlineSync.question(chalk.green ('Press any key to continue...'))
-        simulateEncounter(weatherCondition);
-    }
+        simulateEncounter(character, weatherCondition);
+        if(character.health <= 0){
+            console.log(chalk.red ('Game over! Your journey ends'));
+            break;
+        } 
+    }  
+   
+    if (character.health > 0){
+        console.log(chalk.green ('Congratulations! You survived the journey'));  
 
-    console.log(chalk.red ('Game over! Your journey ends'));  
+    }
 }
 
 main();
