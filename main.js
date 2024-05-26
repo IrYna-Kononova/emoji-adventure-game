@@ -90,18 +90,24 @@ function main() {
     const character = new Character ('Adventurer');
     console.log(chalk.bold ('Your journey begins!'));
 
-   while (character.health > 0){
-    const weatherCondition = simulateWeather();
-    readlineSync.question(chalk.green ('Press any key to continue...'))
-    console.clear();
-    simulateEncounter(character, weatherCondition);
-    if(character.health <= 0){
-        console.log(chalk.red ('Game over! Your journey ends'));
-        break;
+    //the adventurer needs to survive a specified number of encounters to win the game
+    const totalEncounters = 10;
+    let encountersSurvived = 0;
+    
+    while (character.health > 0 && encountersSurvived < totalEncounters){
+        const weatherCondition = simulateWeather();
+        readlineSync.question(chalk.green ('Press any key to continue...'))
+        console.clear();
+        simulateEncounter(character, weatherCondition);
+        encountersSurvived++;
+
+        if(character.health <= 0){
+            console.log(chalk.red ('Game over! Your journey ends'));
+            break;
       } 
     }  
    
-    if (character.health > 0){
+    if (encountersSurvived >= totalEncounters){
         console.log(chalk.green ('Congratulations! You survived the journey'));  
 
     }
