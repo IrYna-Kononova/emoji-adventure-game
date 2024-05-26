@@ -71,7 +71,7 @@ function simulateEncounter(character, weatherCondition) {
             break;
         case '❄️':
             console.log(chalk.cyan ('It`s snowing. You feel incredible!'));
-            character.recoverHealth(5);
+            character.recoverHealth(15);
             break;
         case '🌪️':
             console.log(chalk.red ('A tornado is coming your way! Run!'));
