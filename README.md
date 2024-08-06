@@ -30,4 +30,4 @@ node main.js
 - Encounter different weather conditions and see how they affect your character.
 - Survive through a specified number of encounters to win the game.
 
-![screen](images)
+![image(1).png](images)
