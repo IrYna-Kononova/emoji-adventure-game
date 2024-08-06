@@ -7,3 +7,17 @@ Welcome to Emoji Adventure! This is a simple command-line interface game where y
 - Mood Reactions: The character's mood changes based on the weather, adding an emotional layer to the adventure.
 - Health Management: Make strategic decisions to manage the character's health and survive the journey.
 - Simple CLI Interface: Easy to play and interact with through the terminal.
+## Installation
+To get started, clone the repository and navigate to the project directory.
+git clone https://github.com/yourusername/emoji-adventure-game
+cd emoji-adventure-game
+Ensure you have a version of node and npm installed. Install dependencies with:
+npm install
+Then start the game with:
+node main.js
+## How to Play
+1.Run the game using the command above.
+2.Press any key to continue when prompted.
+3.Encounter different weather conditions and see how they affect your character.
+4.Survive through a specified number of encounters to win the game.
+
