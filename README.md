@@ -16,8 +16,8 @@ npm install
 Then start the game with:
 node main.js
 ## How to Play
-1.Run the game using the command above.
-2.Press any key to continue when prompted.
-3.Encounter different weather conditions and see how they affect your character.
-4.Survive through a specified number of encounters to win the game.
+- Run the game using the command above.
+- Press any key to continue when prompted.
+- Encounter different weather conditions and see how they affect your character.
+- Survive through a specified number of encounters to win the game.
 
