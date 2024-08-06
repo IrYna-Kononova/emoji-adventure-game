@@ -9,8 +9,9 @@ Welcome to Emoji Adventure! This is a simple command-line interface game where y
 - Simple CLI Interface: Easy to play and interact with through the terminal.
 ## Installation
 To get started, clone the repository and navigate to the project directory.
-git clone https://github.com/yourusername/emoji-adventure-game
-cd emoji-adventure-game
+```bash
+git clone https://github.com/yourusername/emoji-adventure
+cd emoji-adventure
 Ensure you have a version of node and npm installed. Install dependencies with:
 npm install
 Then start the game with:
