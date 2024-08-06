@@ -12,17 +12,17 @@ To get started, clone the repository and navigate to the project directory.
 ```bash
 git clone https://github.com/yourusername/emoji-adventure
 cd emoji-adventure
-```bash
+```
 
 Ensure you have a version of node and npm installed. Install dependencies with:
 ```bash
 npm install
-```bash
+```
 
 Then start the game with:
 ```bash
 node main.js
-```bash
+```
 
 ## How to Play
 - Run the game using the command above.
